@@ -134,6 +134,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
 
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),  # minutes=5
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),  # minutes=5 // lasts for 1 day
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
