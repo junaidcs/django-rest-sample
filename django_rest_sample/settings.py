@@ -126,7 +126,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+from datetime import timedelta
+
+
 REST_FRAMEWORK = {
     # 'APPEND_SLASH': False,
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticatedOrReadOnly',) 
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
+
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),  # minutes=5
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
