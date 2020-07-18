@@ -22,4 +22,11 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('languages.urls')),
+
+    # it will enable user login on website on right corner
+    path('api-auth/', include('rest_framework.urls')),
+
+    # jwt routes
+    path('api/token/', TokenObtainPairView.as_view()),
+    path('api/token/refresh/', TokenRefreshView.as_view()),
 ]
