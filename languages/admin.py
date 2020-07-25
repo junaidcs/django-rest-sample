@@ -7,3 +7,9 @@ admin.site.register(Programmer)
 
 
 
+@admin.register(Language)
+class LanguageAdmin(admin.ModelAdmin):
+    fields = ['name']  # show on edit/add form
+    list_display = ['name', 'desc']  # list in admin side
+    list_filter = ['name']
+    search_fields = ['name']
