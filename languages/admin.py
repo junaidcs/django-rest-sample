@@ -6,7 +6,6 @@ admin.site.register(Paradigm)
 admin.site.register(Programmer)
 
 
-
 @admin.register(Language)
 class LanguageAdmin(admin.ModelAdmin):
     fields = ['name']  # show on edit/add form
